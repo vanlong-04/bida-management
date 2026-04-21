@@ -1,6 +1,6 @@
-# 🚀 Quick Start Guide
+# Quick Start Guide
 
-## ⚡ 5-Minute Setup
+## 5-Minute Setup
 
 ### Step 1: Update Router (2 min)
 Edit `src/router/index.js`:
@@ -47,11 +47,11 @@ npm run dev
 ### Step 5: Test (1 min)
 - Open http://localhost:5173/admin/dich-vu
 - Try adding a service
-- The component should work! ✅
+- The component should work! 
 
 ---
 
-## 🎯 Feature Checklist
+## Feature Checklist
 
 ### Dịch Vụ Component
 - [ ] Can see list of services
@@ -106,7 +106,7 @@ Each endpoint must return:
 
 ---
 
-## ⚠️ Common Issues & Fixes
+## Common Issues & Fixes
 
 ### Issue 1: "404 Not Found" on API calls
 **Solution:**
@@ -157,7 +157,7 @@ http://YOUR_IP:5173/admin/dich-vu
 
 ---
 
-## 🔍 Debugging Tips
+## Debugging Tips
 
 ### Vue DevTools
 1. Install Vue DevTools extension
@@ -182,7 +182,7 @@ console.log('Service added:', response.data)
 
 ---
 
-## 📊 Performance Tips
+## Performance Tips
 
 ### Optimize Bundle
 ```bash
@@ -204,7 +204,7 @@ npm run build
 
 ---
 
-## 🎨 Customization Examples
+## Customization Examples
 
 ### Change Primary Color
 Edit component `<style scoped>`:
@@ -218,7 +218,7 @@ Edit component `<style scoped>`:
 ### Change Receipt Logo
 Edit BillPrinter.vue:
 ```vue
-<h2 class="business-name">🍕 PIZZA HUT</h2>
+<h2 class="business-name"> PIZZA HUT</h2>
 <p class="business-tagline">Đồ ăn nhanh, chất lượng</p>
 ```
 
@@ -243,7 +243,7 @@ formData.value = {
 
 ---
 
-## 💾 Backup & Deployment
+## Backup & Deployment
 
 ### Before Deployment
 - [ ] Test all features in production APIs
@@ -261,7 +261,7 @@ formData.value = {
 
 ---
 
-## 📞 Support Resources
+## Support Resources
 
 ### Documentation Files
 - `SETUP_GUIDE.md` - Full setup instructions
@@ -283,19 +283,19 @@ formData.value = {
 
 ---
 
-## ✅ First Steps
+## First Steps
 
-1. **Copy components** to your project ✅
-2. **Update router** with new routes ✅
-3. **Set API URL** in .env.local ✅
-4. **Test in browser** with npm run dev ✅
-5. **Verify API calls** work ✅
-6. **Customize colors** if needed ✅
-7. **Deploy to production** ✅
+1. **Copy components** to your project 
+2. **Update router** with new routes 
+3. **Set API URL** in .env.local 
+4. **Test in browser** with npm run dev 
+5. **Verify API calls** work 
+6. **Customize colors** if needed 
+7. **Deploy to production** 
 
 ---
 
-## 🎉 You're Ready!
+## You're Ready!
 
 Your modern, professional billiard management system is ready to go. 
 
@@ -305,10 +305,10 @@ Your modern, professional billiard management system is ready to go.
 - Verify API connections
 - Test in Postman
 
-**Happy coding! 🚀**
+**Happy coding! **
 
 ---
 
 **Version:** 1.0  
 **Updated:** 2024-03-26  
-**Status:** Production Ready ✅
+**Status:** Production Ready 

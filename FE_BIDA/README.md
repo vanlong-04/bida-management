@@ -1,254 +1,126 @@
-# 🎱 Hệ Thống Quản Lý Quán Bida - Frontend
+# Hệ Thống Quản Lý Quán Bida - Frontend
 
-**Modern SaaS-style Management System for Billiard Club**
+**Hệ thống quản lý chuyên nghiệp phong cách SaaS dành cho câu lạc bộ Bida**
 
-Vue 3 + Vite + Bootstrap 5 with professional UI/UX
-
----
-
-## 🎯 What's New
-
-✨ **2 Modern Vue 3 Components** (Composition API + `<script setup>`)
-
-1. **Quản Lý Dịch Vụ** - Service/Menu Management
-   - Grid card display
-   - Real-time search
-   - Full CRUD operations
-   - Form validation
-   - Toast notifications
-
-2. **In Hóa Đơn** - Bill/Invoice Printer
-   - Professional receipt design
-   - Thermal printer optimized (80mm)
-   - Print via window.print()
-   - PDF export ready
-   - Real-time calculations
+Sử dụng Vue 3 + Vite + Bootstrap 5 với giao diện UI/UX hiện đại, tinh tế.
 
 ---
 
-## ⚡ Quick Start (5 minutes)
+##  Các tính năng mới (Vừa cập nhật)
 
-1. **Read** `QUICK_START.md` first
-2. **Update router** with routes from `ROUTER_SETUP.js`
-3. **Set API URL** in `.env.local`
-4. **Run** `npm run dev`
-5. **Visit** `http://localhost:5173/admin/dich-vu`
+**Hệ thống đặt bàn & Khuyến mãi thông minh**
+
+1. **Mở bàn nhanh (Quick Open)**
+   - Chọn nhanh thời gian chơi dự kiến (1h, 2h, 3h).
+   - Chọn kèm **Gói Combo** ngay khi bắt đầu.
+   - Hiển thị đồng hồ đếm ngược và thông báo khi sắp hết giờ (<10 phút).
+
+2. **Dịch vụ Khuyến mãi & Giờ vàng**
+   - Tự động áp dụng giảm giá trong khung giờ vàng (Happy Hour).
+   - Quản lý linh hoạt các gói Combo (ví dụ: Combo 2h + 4 nước).
+   - Tự động tính toán chiết khấu trên hóa đơn.
+
+3. **Đặt bàn nhóm (Bulk Booking)**
+   - Chế độ chọn nhiều bàn cùng lúc.
+   - Mở hóa đơn hàng loạt cho đoàn khách đông chỉ với 1 click.
+
+4. **Gia hạn thời gian**
+   - Nút gia hạn nhanh trong chi tiết hóa đơn.
+   - Cập nhật thời gian kết thúc dự kiến ngay lập tức.
 
 ---
 
-## 📚 Documentation
+##  Bắt đầu nhanh (5 phút)
 
-- **`QUICK_START.md`** - 5 min setup guide ⚡
-- **`SETUP_GUIDE.md`** - Full configuration instructions 📋
-- **`FEATURE_SHOWCASE.md`** - Design & features 🎨
-- **`API_INTEGRATION.md`** - API specifications 🔌
-- **`ROUTER_SETUP.js`** - Router configuration 🛣️
+1. **Đọc** `QUICK_START.md` trước.
+2. **Cập nhật router** với các đường dẫn từ `ROUTER_SETUP.js`.
+3. **Thiết lập API URL** trong file `.env.local`.
+4. **Chạy lệnh**: `npm run dev`
+5. **Truy cập**: `http://localhost:5174/` (Đăng nhập admin: `admin` / `123456`).
 
 ---
 
-## 📂 Component Files
+##  Tài liệu hướng dẫn
+
+- **`HUONG_DAN_CAI_DAT.md`** - Hướng dẫn cài đặt chi tiết 📋
+- **`API_INTEGRATION.md`** - Thông tin các cổng API 🔌
+- **`ROUTER_SETUP.js`** - Cấu hình định tuyến (Router) 🛣️
+
+---
+
+##  Cấu trúc file chính
 
 ```
-src/components/admin/
-├── dichvu/
-│   └── index.vue              ✨ Service Management (600+ LOC)
-├── hoaban/
-│   └── BillPrinter.vue        🖨️  Bill Printer (500+ LOC)
+src/components/user_view/user/
+├── index.vue               Danh sách bàn & Mở bàn nhanh
+├── BanDetail.vue           Chi tiết hóa đơn & Gia hạn giờ
+├── indexThucDon.vue        Quản lý thực đơn & Combo
 ```
 
 ---
 
-## 🎨 Design Features
+## Đặc điểm thiết kế
 
-- ✅ Modern SaaS minimalist design
-- ✅ Soft rounded corners (border-radius)
-- ✅ Light box shadows
-- ✅ Gradient buttons
-- ✅ Smooth animations
-- ✅ Responsive mobile/tablet/desktop
-- ✅ Print-optimized CSS
-- ✅ Dark mode ready
+-  Thiết kế tối giản phong cách SaaS hiện đại.
+-  Bo góc mềm mại, đổ bóng nhẹ nhàng.
+-  Nút bấm hiệu ứng Gradient sang trọng.
+-  Hiệu ứng chuyển cảnh mượt mà.
+-  Tương thích hoàn toàn với Mobile/Tablet/Desktop.
+-  Tối ưu hóa giao diện in ấn hóa đơn.
 
 ---
 
-## 🔌 API Endpoints Required
+##  Các tính năng chính
 
-### Service Management
-```
-GET    /admin/dich-vu/get-data
-POST   /admin/dich-vu/create-data
-POST   /admin/dich-vu/update-data
-POST   /admin/dich-vu/delete-data
-```
+### Quản lý bàn
+- Hiển thị lưới bàn (Grid) trực quan.
+- Trạng thái bàn thời gian thực (Trống/Đang sử dụng).
+- Bộ lọc loại bàn (Thường/VIP).
+- Tìm kiếm bàn nhanh theo tên.
 
-### Bill Management
-```
-GET    /admin/ban/get-data
-GET    /admin/hoa-don/get-bill-by-ban-id?ban_id=X
-```
-
-See `API_INTEGRATION.md` for details.
+### Quản lý hóa đơn
+- Tính tiền tự động theo từng phút chơi.
+- Thêm/Xóa dịch vụ dễ dàng.
+- Tích hợp tra cứu khách hàng VIP bằng SĐT.
+- Gộp bàn linh hoạt.
+- In hóa đơn chuyên nghiệp (Khổ 80mm).
 
 ---
 
-## 🚀 Features
-
-### Service Management
-- ✨ Grid card layout (300px responsive)
-- 🔍 Real-time search by name/category
-- ➕ Add new service (modal form)
-- ✏️ Edit existing service
-- 🗑️ Delete with confirmation
-- ✅ Form validation with error messages
-- 🔔 Toast notifications (success/error)
-- ⚙️ Loading states
-- 📱 Fully responsive
-
-### Bill Printer
-- 📋 Select table from dropdown
-- 🧾 Professional receipt template
-- 💰 Real-time total calculation
-- 🖨️ Print button (window.print())
-- 📄 PDF export ready
-- 🔧 Thermal 80mm optimized
-- 📱 Mobile responsive
-- ⚡ Fast load times
-
----
-
-## 💻 Tech Stack
+##  Công nghệ sử dụng
 
 - **Vue 3** - Composition API + `<script setup>`
-- **Vite** - Ultra-fast build tool
-- **Axios** - API client
-- **Bootstrap 5** - Grid system
+- **Vite** - Công cụ build siêu nhanh
+- **Axios** - Kết nối API
+- **Bootstrap 5** - Hệ thống Grid & Components
 - **CSS3** - Gradients, animations, @media print
-- **JavaScript** - ES6+
 
 ---
 
-## 🎯 Next Steps
+##  Tùy chỉnh
 
-1. **Install** - Ensure dependencies: `npm install`
-2. **Configure** - Update `.env.local` with API URL
-3. **Setup Router** - Add routes from `ROUTER_SETUP.js`
-4. **Test** - Run `npm run dev`
-5. **Customize** - Update colors/branding
-6. **Build** - `npm run build`
-7. **Deploy** - Deploy dist/ folder
-
----
-
-## ⚙️ Environment Setup
-
-```bash
-# Create .env.local
-VITE_API_URL=http://localhost:8000/api
-```
-
-Or copy from `.env.example`:
-```bash
-cp .env.example .env.local
-```
-
----
-
-## 📊 Code Quality
-
-- ✅ Modern Vue 3 best practices
-- ✅ Composition API throughout
-- ✅ Proper error handling
-- ✅ Loading states
-- ✅ Form validation
-- ✅ Responsive design
-- ✅ Clean, readable code
-- ✅ Comments where needed
-
----
-
-## 🔧 Customization
-
-### Change Primary Color
-Edit `<style scoped>` in component:
+### Thay đổi màu chủ đạo
+Chỉnh sửa biến CSS trong component:
 ```css
---primary-color: #your-color;
+--natural-primary: #4A5D4E; /* Màu xanh rêu sang trọng */
 ```
 
-### Update Receipt Template
-Edit `BillPrinter.vue`:
-```vue
-<h2 class="business-name">🎱 YOUR NAME</h2>
-```
-
-### Add Form Fields
-Edit `DichVuManagement.vue` and add to form + data.
+### Cập nhật mẫu hóa đơn
+Chỉnh sửa trong `BanDetail.vue` phần `printReceipt()`.
 
 ---
 
-## 🐛 Troubleshooting
+## Hỗ trợ
 
-**Components not loading?**
-- Check router path is correct
-- Verify component import is correct
-- Check browser console for errors
+Nếu gặp vấn đề trong quá trình cài đặt, vui lòng kiểm tra:
+- Backend đã chạy chưa (`php artisan serve`).
+- File `.env.local` đã đúng URL API chưa.
+- Console trình duyệt có lỗi gì không.
 
-**API calls failing?**
-- Check `.env.local` has correct URL
-- Verify backend is running
-- Check DevTools Network tab
-- Use Postman to test endpoints
-
-**Print layout broken?**
-- Test print preview (Ctrl+Shift+P)
-- Check page size (80mm or A4)
-- Adjust @media print CSS
+**Chúc bạn quản lý hiệu quả! **
 
 ---
 
-## 📞 Support
-
-See documentation files for detailed help:
-- Issues? → `SETUP_GUIDE.md`
-- Features? → `FEATURE_SHOWCASE.md`  
-- API? → `API_INTEGRATION.md`
-- Quick help? → `QUICK_START.md`
-
----
-
-## ✅ Checklist
-
-- [x] Vue 3 components created
-- [x] Full CRUD operations
-- [x] Form validation
-- [x] API integration
-- [x] Responsive design
-- [x] Print optimization
-- [x] Toast notifications
-- [x] Loading states
-- [x] Error handling
-- [x] Documentation
-- [x] Production ready
-
----
-
-## 📈 Performance
-
-- Bundle size: ~45KB (minified)
-- API response: <500ms
-- First paint: <2s
-- Responsive: All devices
-- Print: Optimized
-
----
-
-## 🎉 Ready to Use!
-
-Start with: **`QUICK_START.md`** ⚡
-
-**Happy coding! 🚀**
-
----
-
-**Version:** 1.0  
-**Updated:** 2024-03-26  
-**Status:** ✅ Production Ready
+**Phiên bản:** 1.1 (Cập nhật tính năng Khuyến mãi & Đặt bàn nhanh)  
+**Ngày cập nhật:** 21/04/2026  
+**Trạng thái:**  Sẵn sàng sử dụng

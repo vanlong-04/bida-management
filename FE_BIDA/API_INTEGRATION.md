@@ -1,11 +1,11 @@
-# 🔌 API Integration Guide
+# API Integration Guide
 
 ## Overview
 This guide shows the expected API responses and request formats for both components.
 
 ---
 
-## 1️⃣ Dịch Vụ (Service Management) API
+## 1️ Dịch Vụ (Service Management) API
 
 ### GET /admin/dich-vu/get-data
 **Purpose:** Fetch all services/dishes
@@ -292,7 +292,7 @@ GET http://localhost:8000/api/admin/hoa-don/get-bill-by-ban-id?ban_id=5
 
 ---
 
-## 📋 Request/Response Format Notes
+##  Request/Response Format Notes
 
 ### 1. Field Naming Flexibility
 Component supports both Vietnamese and English field names:
@@ -344,7 +344,7 @@ services.value = response.data.data.map(item => ({
 
 ---
 
-## 🧪 Testing with Postman
+##  Testing with Postman
 
 ### 1. Setup Environment Variables
 ```json
@@ -395,7 +395,7 @@ Tests:
 
 ---
 
-## 🔐 HTTP Headers
+##  HTTP Headers
 
 ### Request Headers (Recommended)
 ```
@@ -413,7 +413,7 @@ Access-Control-Allow-Headers: Content-Type
 
 ---
 
-## 🛡️ Error Handling
+##  Error Handling
 
 ### Expected Error Responses
 
@@ -481,7 +481,7 @@ POST   /admin/hoa-don/create-data       (optional)
 
 ---
 
-## 🔄 Data Flow Sequence
+##  Data Flow Sequence
 
 ### Add Service Flow
 ```
@@ -519,7 +519,7 @@ Component                Backend
 
 ---
 
-## 📚 Example Implementation (Laravel)
+##  Example Implementation (Laravel)
 
 ### Controller Method
 ```php
@@ -554,7 +554,7 @@ public function createData(Request $request) {
 
 ---
 
-## ✅ Checklist
+##  Checklist
 
 - [ ] Backend returns correct field names
 - [ ] API returns `status` and `message` fields
@@ -571,4 +571,4 @@ public function createData(Request $request) {
 
 **API Version**: 1.0  
 **Last Updated**: 2024-03-26  
-**Status**: Ready for Integration ✅
+**Status**: Ready for Integration 
